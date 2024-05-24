@@ -3,7 +3,7 @@ import React from "react";
 const DownloadApp: React.FC = () => {
   return (
     <section className="relative px-6 md:px-20 py-10 h-[500px]">
-      <div className="container mx-auto">
+      <div className="mx-auto">
         <h2 className="text-[#263238] text-3xl md:text-4xl font-semibold">
           Download our app now
         </h2>

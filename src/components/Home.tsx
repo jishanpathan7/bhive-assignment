@@ -37,8 +37,7 @@ const Home: React.FC = () => {
       <section
         className="hero flex flex-col-reverse md:flex-row items-center w-full justify-between px-6 md:px-20 py-4 bg-[#f7f8fd] bg-cover"
         style={{
-          backgroundImage: `url('../assets/bg-image.png')`,
-         
+          backgroundImage: `url('../assets/bg-image.png')`,       
         }}
       >
         <h1 className="font-bold text-center md:text-left text-xl mt-2 md:mt-0 md:text-[40px] md:w-[500px] leading-snug text-[#2a3042]">
