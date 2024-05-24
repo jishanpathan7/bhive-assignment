@@ -33,7 +33,7 @@ const LocationCard = ({ property }: { property: PropertyProps }) => (
           <span className="font-medium text-[#514D2D] text-sm mt-1">
             Day Pass
           </span>
-          <p className="font-semibold text-[16px]">
+          <p className="font-semibold text-[16px] text[#263238]">
             ₹ {property?.day_pass_price}
             <span className="font-normal text-sm">/ Day</span>
           </p>
