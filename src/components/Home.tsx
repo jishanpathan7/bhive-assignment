@@ -5,23 +5,41 @@ import { features, propertyImages } from "../data/constants";
 import LocationCard from "./LocationCard";
 import DownloadApp from "./DownloadApp";
 import propertiesData from "../data/properties.json";
+import { PropertyProps } from "../data/index";
 
 const Home: React.FC = () => {
-  const [properties, setProperties] = useState<any[]>([]);
+  const [properties, setProperties] = useState<PropertyProps[]>([]);
 
   useEffect(() => {
-    const updatedProperties = propertiesData.map((property, index) => ({
-      ...property,
-      imageUrl: propertyImages[index],
-    }));
-    setProperties(updatedProperties);
+    // Simulate fetching data from an API endpoint
+    const fetchData = async () => {
+      try {
+        // Simulate API response delay
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        // Assuming propertiesData represents the API response
+        const updatedProperties = propertiesData.map((property, index) => ({
+          ...property,
+          imageUrl: propertyImages[index],
+        }));
+        if (updatedProperties) {
+          setProperties(updatedProperties);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
     <main className="py-20">
       <section
         className="hero flex flex-col-reverse md:flex-row items-center w-full justify-between px-6 md:px-20 py-4 bg-[#f7f8fd] bg-cover"
-        style={{ backgroundImage: `url('../assets/bg-image.jpg')` }}
+        style={{
+          backgroundImage: `url('../assets/bg-image.png')`,
+         
+        }}
       >
         <h1 className="font-bold text-center md:text-left text-xl mt-2 md:mt-0 md:text-[40px] md:w-[500px] leading-snug text-[#2a3042]">
           Host your meeting with world-class amenities. Starting at{" "}
@@ -47,7 +65,9 @@ const Home: React.FC = () => {
                gap-2 md:gap-4 bg-white md:bg-inherit shadow-md md:shadow-none rounded-md py-3 md:py-6 "
             >
               <img src={feature.image} alt={feature.label} className="" />
-              <span className="text-sm md:text-lg font-medium">{feature.label}</span>
+              <span className="text-sm md:text-lg font-medium">
+                {feature.label}
+              </span>
             </div>
           ))}
         </div>
